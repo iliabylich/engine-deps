@@ -1,0 +1,6 @@
+source "https://rubygems.org"
+
+gemspec
+
+gem 'foo', path: '../foo', require: 'foo/dummy'
+gem 'rspec'
