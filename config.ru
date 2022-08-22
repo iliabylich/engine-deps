@@ -3,6 +3,7 @@ gem 'railties'
 
 require 'rails'
 require 'action_controller/railtie'
+require 'foo/engine'
 
 class HelloWorldApp < Rails::Application
   config.eager_load = 'development'
@@ -11,6 +12,7 @@ class HelloWorldApp < Rails::Application
   config.secret_token = '9c9846b2f7cea64315503e4f5c124094'
 
   routes.append do
+    mount Foo::Engine, at: '/foo'
     get '/' => 'hello#world'
   end
 end
